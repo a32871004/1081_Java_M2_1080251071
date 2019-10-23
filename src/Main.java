@@ -3,21 +3,21 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner sn=new Scanner(System.in);
-        int n=sn.nextInt();
-        int m=n/2;
-        boolean a=true;
-        for (int i=2;i<=m;i++){
-            if(n%i==0){
-                a=false;
-                break;
+        Scanner sn = new Scanner(System.in);
+        float n1 = sn.nextFloat();
+        float max = n1;
+        float min = n1;
+        for (int i = 1; i < 10; i++) {
+            float n2 = sn.nextFloat();
+            if (max < n2) {
+                max = n2;
+            } else if (min > n2) {
+                min = n2;
             }
         }
-        if(a){
-            System.out.println("Yes");
-        }
-        else {
-            System.out.println("No");
-        }
+        System.out.print("Max=");
+        System.out.printf("%.2f\n" ,max);
+        System.out.print("Min=");
+        System.out.printf("%.2f\n",min);
     }
 }
