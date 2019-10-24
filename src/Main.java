@@ -3,20 +3,30 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-
-        int sum = 0,i=1,j=1;
-        for (i=1;i<=n;i++){
-            for (j=1;j<n;j++){
-                sum = i*j;
-                System.out.print(sum+"\t");
+        Scanner sn = new Scanner(System.in);
+        int a =sn.nextInt();
+        int sum=0,cd;
+        boolean flag=true;
+        for (int i=2;i<=a;i++){
+            cd=i;
+            for (;cd!=1;){
+                if (cd%2==0){
+                    cd/=2;
+                }
+                else if(cd%3==0){
+                    cd/=3;
+                }
+                else if (cd%5==0){
+                    cd/=5;
+                }
+                else {
+                    flag=false;
+                    break;
+                }
             }
-            System.out.println(i*(j));
+            if(flag)sum+=i;
+            flag=true;
         }
+        System.out.println(sum);
     }
 }
-
-
-
-
